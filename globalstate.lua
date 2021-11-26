@@ -22,7 +22,7 @@ else
 
     RegisterNetEvent("loaf_globalstate:update_global")
     AddEventHandler("loaf_globalstate:update_global", function(new_state)
-        GlobalState = new_state
+        for k,v in pairs(new_state) do GlobalState[k] = v end
     end)
 
     CreateThread(function()
